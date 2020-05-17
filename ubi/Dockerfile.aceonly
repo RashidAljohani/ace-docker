@@ -84,12 +84,12 @@ ENV BASH_ENV=/usr/local/bin/ace_env.sh
 # Expose ports.  7600, 7800, 7843 for ACE; 9483 for ACE metrics
 EXPOSE 7600 7800 7843 9483
 
-
 USER aceuser
 
 WORKDIR /home/aceuser
 RUN mkdir /home/aceuser/initial-config && \
     chown aceuser:aceuser /home/aceuser/initial-config
+
 
 WORKDIR /var/mqsi/
 RUN . /opt/ibm/ace-11/server/bin/mqsiprofile && \
